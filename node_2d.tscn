@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://xnxjtlf435vj"]
+
+[ext_resource type="Texture2D" uid="uid://dmnejevt14yeq" path="res://file_000000006eb082128870537770e662bd (2).png" id="1_4d7sh"]
+[ext_resource type="Script" uid="uid://ckddh61tfwy6p" path="res://final.gd" id="1_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://4jxhjt6w6u60" path="res://Volver_jugar.png" id="2_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://lq8gky60il28" path="res://asteroid-1.png" id="3_hqns4"]
+[ext_resource type="Script" uid="uid://cuqe7v081kjo4" path="res://animation_player.gd" id="4_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://bt3bxprf5b3pk" path="res://estadisticas.png" id="5_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://b5mvj7fnrw4oc" path="res://skill-point-star.png" id="6_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://da3b5vfv6flai" path="res://money-bag-large.png" id="7_d2bti"]
+[ext_resource type="Texture2D" uid="uid://c7d10nlh3q2q1" path="res://map-marker-boss-skull.png" id="8_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://d3so5x4v384xg" path="res://heart-poison.webp" id="9_flf07"]
+
+[sub_resource type="Animation" id="Animation_k73cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asteroid2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-3.4487705]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Asteroid2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(78.000015, 196)]
+}
+
+[sub_resource type="Animation" id="Animation_rjqkl"]
+resource_name = "rotacion"
+length = 10.0
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"i1ker",
+"time": -0.13333334
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asteroid2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2.0666666, 3.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-3.4487705, -0.36826447, 2.958333, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_fs4d3"]
+resource_name = "rotacion_2"
+length = 10.0
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"i1ker",
+"time": -0.13333334
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asteroid2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0666666, 5.09, 5.1, 7.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-3.4487705, -2.6598817800393584, 6.2831855, 6.2831855, 6.2537036]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Asteroid2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.033333335, 0, 2.0666666, 5.1, 7.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(78.000015, 196), Vector2(78.000015, 196), Vector2(298, 206), Vector2(879, 204), Vector2(1270.9999, 194.00002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vxoj"]
+_data = {
+&"RESET": SubResource("Animation_k73cj"),
+&"rotacion": SubResource("Animation_rjqkl"),
+&"rotacion_2": SubResource("Animation_fs4d3")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pj24i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhput"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kh5xh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bg7xq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dht4g"]
+
+[node name="Node2D" type="Node2D" unique_id=1041884950]
+script = ExtResource("1_ir8iy")
+
+[node name="resultados" type="Sprite2D" parent="." unique_id=1365113782]
+position = Vector2(581.00006, 323)
+scale = Vector2(0.6913876, 0.68305)
+texture = ExtResource("1_4d7sh")
+
+[node name="VolverJugar" type="Sprite2D" parent="." unique_id=1018898328]
+position = Vector2(584, 590)
+scale = Vector2(0.4695946, 0.40851226)
+texture = ExtResource("2_ir8iy")
+
+[node name="Asteroid2" type="Sprite2D" parent="." unique_id=1886031984]
+texture_filter = 1
+position = Vector2(78.000015, 196)
+rotation = -3.4487705
+scale = Vector2(4.8158712, 4.7840266)
+texture = ExtResource("3_hqns4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Asteroid2" unique_id=453558970]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7vxoj")
+script = ExtResource("4_x0ka3")
+
+[node name="Estadisticas" type="Sprite2D" parent="." unique_id=2035570099]
+position = Vector2(584, 283)
+scale = Vector2(0.8269663, 0.8378378)
+texture = ExtResource("5_0h7mo")
+
+[node name="InfoEstado" type="Label" parent="Estadisticas" unique_id=385797337]
+offset_left = 19.347809
+offset_top = -174.25807
+offset_right = 367.60867
+offset_bottom = -109.80653
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Información"
+vertical_alignment = 1
+
+[node name="info_objetivo" type="Label" parent="Estadisticas" unique_id=963348209]
+offset_left = 18.138554
+offset_top = -60.87096
+offset_right = 366.3994
+offset_bottom = 3.5805779
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Información"
+vertical_alignment = 1
+
+[node name="info_peso" type="Label" parent="Estadisticas" unique_id=442775429]
+offset_left = 15.720095
+offset_top = 62.06453
+offset_right = 363.98096
+offset_bottom = 126.51607
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Información"
+vertical_alignment = 1
+
+[node name="info_precio" type="Label" parent="Estadisticas" unique_id=2090872678]
+offset_left = 18.138556
+offset_top = 185.0
+offset_right = 366.3994
+offset_bottom = 249.45154
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Información"
+vertical_alignment = 1
+
+[node name="SkillPointStar" type="Sprite2D" parent="." unique_id=529124096]
+position = Vector2(554, 166)
+scale = Vector2(0.2597656, 0.24999999)
+texture = ExtResource("6_nr8wp")
+
+[node name="MoneyBagLarge" type="Sprite2D" parent="." unique_id=388936465]
+position = Vector2(547, 465)
+scale = Vector2(0.27929693, 0.2851563)
+texture = ExtResource("7_d2bti")
+
+[node name="MapMarkerBossSkull" type="Sprite2D" parent="." unique_id=868923176]
+position = Vector2(547, 367.00003)
+scale = Vector2(0.3417972, 0.3046875)
+texture = ExtResource("8_ta5nu")
+
+[node name="HeartPoison" type="Sprite2D" parent="." unique_id=593170351]
+position = Vector2(548.375, 279)
+scale = Vector2(0.23730433, 0.23437503)
+texture = ExtResource("9_flf07")
+
+[node name="boton" type="Button" parent="." unique_id=1104752242]
+offset_left = 452.0
+offset_top = 549.0
+offset_right = 716.0
+offset_bottom = 618.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pj24i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uhput")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kh5xh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bg7xq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dht4g")

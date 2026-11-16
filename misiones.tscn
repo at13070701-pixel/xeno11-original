@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://77xg4ain563u"]
+
+[ext_resource type="Texture2D" uid="uid://b5msebc8kxv5f" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/Blue_Nebula_04-1024x1024.png" id="1_kbdgy"]
+[ext_resource type="Texture2D" uid="uid://b0goef0sv8syj" path="res://misiones.png" id="2_3eum2"]
+[ext_resource type="FontFile" uid="uid://caip3seb0jd0m" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/RETROTECH.ttf" id="3_2ysnf"]
+[ext_resource type="Texture2D" uid="uid://gjndpguyng50" path="res://botonmision.png" id="3_kbdgy"]
+[ext_resource type="Script" uid="uid://xnrgfbmadjkp" path="res://botonmision_1.gd" id="4_kbdgy"]
+[ext_resource type="Script" uid="uid://c25d8blm7x78u" path="res://botonmision_2.gd" id="5_p78ss"]
+[ext_resource type="Script" uid="uid://bnrg4fpx7tial" path="res://botonmision_3.gd" id="6_2ysnf"]
+[ext_resource type="Script" uid="uid://dq3gayvamrhrv" path="res://botonmision_4.gd" id="7_1mfnv"]
+
+[sub_resource type="GDScript" id="GDScript_2ysnf"]
+
+[node name="BlueNebula041024x1024" type="Sprite2D" unique_id=1785892347]
+position = Vector2(581, 332)
+scale = Vector2(1.1279296, 0.63232416)
+texture = ExtResource("1_kbdgy")
+
+[node name="Misiones" type="Sprite2D" parent="." unique_id=1380371254]
+position = Vector2(-1.7731934, -403.27414)
+scale = Vector2(0.4436621, 0.7306305)
+texture = ExtResource("2_3eum2")
+metadata/_edit_group_ = true
+
+[node name="Botonmision1" type="Sprite2D" parent="." unique_id=256460280]
+position = Vector2(3.5462956, -230.89426)
+scale = Vector2(0.76257855, 0.5437848)
+texture = ExtResource("3_kbdgy")
+script = ExtResource("4_kbdgy")
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1" unique_id=1892183211]
+offset_left = 401.09985
+offset_top = -90.15611
+offset_right = 419.70154
+offset_bottom = -43.623825
+color = Color(0.32941177, 0.62352943, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/ColorRect" unique_id=1210013528]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.9685642, 0.9612867, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/ColorRect/ColorRect" unique_id=1997816917]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.92155623, 0.27963018, 0, 1)
+
+[node name="Botonmision2" type="Sprite2D" parent="Botonmision1" unique_id=5294959]
+position = Vector2(0, 351.8993)
+scale = Vector2(1.006898, 0.9735402)
+texture = ExtResource("3_kbdgy")
+script = ExtResource("5_p78ss")
+
+[node name="Botonmision3" type="Sprite2D" parent="Botonmision1/Botonmision2" unique_id=199349569]
+position = Vector2(1.7319946, 349.5146)
+scale = Vector2(1.0027734, 0.9957678)
+texture = ExtResource("3_kbdgy")
+script = ExtResource("6_2ysnf")
+
+[node name="Botonmision4" type="Sprite2D" parent="Botonmision1/Botonmision2/Botonmision3" unique_id=1145898150]
+position = Vector2(-2.3304553, 359.99997)
+scale = Vector2(1.001087, 0.94909626)
+texture = ExtResource("3_kbdgy")
+script = ExtResource("7_1mfnv")
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2/Botonmision3" unique_id=1205066586]
+offset_left = 401.09985
+offset_top = -90.15611
+offset_right = 419.70154
+offset_bottom = -43.623825
+color = Color(0.32941177, 0.62352943, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2/Botonmision3/ColorRect" unique_id=38979076]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.9685642, 0.9612867, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2/Botonmision3/ColorRect/ColorRect" unique_id=1699513722]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.92155623, 0.27963018, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2" unique_id=744248784]
+offset_left = 401.09985
+offset_top = -90.15611
+offset_right = 419.70154
+offset_bottom = -43.623825
+color = Color(0.32941177, 0.62352943, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2/ColorRect" unique_id=57995864]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.9685642, 0.9612867, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Botonmision1/Botonmision2/ColorRect/ColorRect" unique_id=1125477974]
+layout_mode = 0
+offset_left = 25.5774
+offset_right = 45.341682
+offset_bottom = 46.532295
+color = Color(0.92155623, 0.27963018, 0, 1)
+
+[node name="labelm1" type="Label" parent="." unique_id=91370125]
+offset_left = -298.77753
+offset_top = -253.03476
+offset_right = 285.22247
+offset_bottom = -216.03476
+theme_override_colors/font_color = Color(0.0015821059, 0.12919009, 0.5783318, 1)
+theme_override_fonts/font = ExtResource("3_2ysnf")
+theme_override_font_sizes/font_size = 43
+text = "Observacion climatica global"
+
+[node name="labelm2" type="Label" parent="." unique_id=1450314671]
+offset_left = -317.3957
+offset_top = -53.769894
+offset_right = 323.6043
+offset_bottom = -16.769894
+theme_override_colors/font_color = Color(0.0015821059, 0.12919009, 0.5783318, 1)
+theme_override_fonts/font = ExtResource("3_2ysnf")
+theme_override_font_sizes/font_size = 43
+text = "Red de Telecomunicaciones GEP"
+script = SubResource("GDScript_2ysnf")
+
+[node name="labelm3" type="Label" parent="." unique_id=125821695]
+offset_left = -257.99484
+offset_top = 123.35445
+offset_right = 326.00516
+offset_bottom = 221.35445
+theme_override_colors/font_color = Color(0.0015821059, 0.12919009, 0.5783318, 1)
+theme_override_fonts/font = ExtResource("3_2ysnf")
+theme_override_font_sizes/font_size = 43
+text = "Cartografia y Rele Lunar
+"
+
+[node name="labelm4" type="Label" parent="." unique_id=1648913751]
+offset_left = -263.31433
+offset_top = 313.1305
+offset_right = 320.68567
+offset_bottom = 350.1305
+theme_override_colors/font_color = Color(0.0015821059, 0.12919009, 0.5783318, 1)
+theme_override_fonts/font = ExtResource("3_2ysnf")
+theme_override_font_sizes/font_size = 43
+text = "Exploracion de asteroides"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1392086956]
+offset_left = 322.71518
+offset_top = 289.40848
+offset_right = 336.90042
+offset_bottom = 314.712
+color = Color(0.32941177, 0.62352943, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=276967973]
+layout_mode = 0
+offset_left = 18.618198
+offset_top = -1.4662743e-05
+offset_right = 32.8035
+offset_bottom = 25.303513
+color = Color(0.9685642, 0.9612867, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect" unique_id=777885610]
+layout_mode = 0
+offset_left = 17.73162
+offset_right = 31.030327
+offset_bottom = 25.303535
+color = Color(0.92155623, 0.27963018, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789706894]
+
+[node name="acento" type="ColorRect" parent="CollisionShape2D" unique_id=310121048]
+offset_left = -39.009544
+offset_top = 117.02856
+offset_right = -34.576653
+offset_bottom = 129.68033
+offset_transform_enabled = true
+offset_transform_rotation = -2.422517
+color = Color(0.11834613, 3.465414e-06, 0.5532573, 1)
+
+[node name="acento2" type="ColorRect" parent="CollisionShape2D" unique_id=1989915101]
+offset_left = -61.174053
+offset_top = 308.3862
+offset_right = -55.854565
+offset_bottom = 319.45645
+offset_transform_enabled = true
+offset_transform_rotation = -2.422517
+color = Color(0.11834613, 3.465414e-06, 0.5532573, 1)
+
+[node name="acento" type="ColorRect" parent="." unique_id=1390267019]
+offset_left = -92.20433
+offset_top = -254.61623
+offset_right = -82.45195
+offset_bottom = -249.87181
+offset_transform_enabled = true
+offset_transform_rotation = -0.8517207
+color = Color(0.13814157, 5.2943824e-06, 0.6186146, 1)

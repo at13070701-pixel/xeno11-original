@@ -1,0 +1,424 @@
+[gd_scene format=3 uid="uid://b3y84tbqrqms0"]
+
+[ext_resource type="Script" path="res://cartas/main.gd" id="1_8oqws"]
+[ext_resource type="Script" path="res://cartas/card_manager.gd" id="1_xm3su"]
+[ext_resource type="Texture2D" uid="uid://bpi6xpryq3abx" path="res://pixelart_starfields/pixelart_starfield_corona.png" id="2_8oqws"]
+[ext_resource type="Script" path="res://cartas/slot.gd" id="2_xm3su"]
+[ext_resource type="Texture2D" uid="uid://dbq0a5l05itwh" path="res://3despegue/fondo_prueba.png" id="3_15a1u"]
+[ext_resource type="Script" path="res://cartas/configuracion_mision.gd" id="6_15a1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdgql"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu1nv"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3ig3"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oqws"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15a1u"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jekmu"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v75i"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aa75"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 1, 0.85490197, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vu8a"]
+bg_color = Color(0.9607843, 0.9607843, 0.8627451, 1)
+
+[sub_resource type="Theme" id="Theme_mgblt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cku63"]
+bg_color = Color(0.105882354, 0.16470589, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.75642526, 0.7902988, 0.96013933, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj24i"]
+bg_color = Color(0.9607843, 0.9607843, 0.8627451, 1)
+
+[node name="main" type="Node2D" unique_id=1842489533]
+script = ExtResource("1_8oqws")
+metadata/_edit_vertical_guides_ = [-59.0]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=120487533]
+offset_left = 4.0
+offset_right = 1152.0
+offset_bottom = 654.0
+texture = ExtResource("2_8oqws")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=779946618]
+offset_left = 4.0
+offset_right = 1152.0
+offset_bottom = 654.0
+texture = ExtResource("3_15a1u")
+
+[node name="Card_manager" type="Node2D" parent="." unique_id=824589282]
+script = ExtResource("1_xm3su")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=827178112]
+custom_minimum_size = Vector2(0, 90)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 543.0
+offset_right = 1154.0
+offset_bottom = 644.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BtnCabina" type="Button" parent="HBoxContainer" unique_id=1820665849]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rdgql")
+text = "Cabina"
+
+[node name="BtnMotor" type="Button" parent="HBoxContainer" unique_id=127846640]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qu1nv")
+text = "Motor"
+
+[node name="BtnAlas" type="Button" parent="HBoxContainer" unique_id=1128429818]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_t3ig3")
+text = "Alas"
+
+[node name="BtnPatas" type="Button" parent="HBoxContainer" unique_id=2061050908]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8oqws")
+text = "Patas de aterrizaje"
+
+[node name="BtnEscudo" type="Button" parent="HBoxContainer" unique_id=791280678]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_15a1u")
+text = "Escudos termicos"
+
+[node name="BtnPaneles" type="Button" parent="HBoxContainer" unique_id=1470103986]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jekmu")
+text = "Paneles"
+
+[node name="BtnAntenas" type="Button" parent="HBoxContainer" unique_id=2111325431]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1v75i")
+text = "Antenas"
+
+[node name="BtnCarga" type="Button" parent="HBoxContainer" unique_id=138057911]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4aa75")
+text = "Carga"
+
+[node name="Panel" type="Panel" parent="." unique_id=1221222917]
+custom_minimum_size = Vector2(20, 30)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 678.0
+offset_top = 98.0
+offset_right = 1114.0
+offset_bottom = 532.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vu8a")
+
+[node name="CraftGrid" type="GridContainer" parent="." unique_id=90673183]
+offset_left = 698.0
+offset_top = 122.0
+offset_right = 1086.0
+offset_bottom = 514.0
+theme = SubResource("Theme_mgblt")
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="SlotCabina" type="Panel" parent="CraftGrid" unique_id=518001055]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+
+[node name="Cabina" type="Label" parent="CraftGrid/SlotCabina" unique_id=1668381535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "🚀 CABINA"
+
+[node name="SlotAlas" type="Panel" parent="CraftGrid" unique_id=842989582]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 2
+
+[node name="Alas" type="Label" parent="CraftGrid/SlotAlas" unique_id=1396869157]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "🪽 ALAS"
+
+[node name="SlotMotor" type="Panel" parent="CraftGrid" unique_id=1104536368]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 1
+
+[node name="Motor" type="Label" parent="CraftGrid/SlotMotor" unique_id=195456079]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "⚙ MOTOR"
+
+[node name="SlotPatas" type="Panel" parent="CraftGrid" unique_id=910375083]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 3
+
+[node name="Patas" type="Label" parent="CraftGrid/SlotPatas" unique_id=1643660604]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 75.0
+text = "🦿PATAS DE
+ATERIZAJE
+"
+
+[node name="SlotResultado" type="Panel" parent="CraftGrid" unique_id=1401267951]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 8
+
+[node name="Resultado" type="Label" parent="CraftGrid/SlotResultado" unique_id=825675265]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Resultado"
+
+[node name="SlotPaneles" type="Panel" parent="CraftGrid" unique_id=1819974657]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 5
+
+[node name="Paneles" type="Label" parent="CraftGrid/SlotPaneles" unique_id=1440958638]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 49.0
+text = "☀ PANELES
+SOLARES"
+
+[node name="SlotAntenas" type="Panel" parent="CraftGrid" unique_id=1713451005]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 6
+
+[node name="Antenas" type="Label" parent="CraftGrid/SlotAntenas" unique_id=238699032]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "📡 ANTENAS"
+
+[node name="SlotEscudos" type="Panel" parent="CraftGrid" unique_id=220113763]
+custom_minimum_size = Vector2(81, 81)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 4
+
+[node name="Escudos" type="Label" parent="CraftGrid/SlotEscudos" unique_id=2001731210]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "🛡 ESCUDO"
+
+[node name="SlotCarga" type="Panel" parent="CraftGrid" unique_id=625366328]
+custom_minimum_size = Vector2(81, 81)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 7
+
+[node name="Carga" type="Label" parent="CraftGrid/SlotCarga" unique_id=240715026]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "📦 CARGA"
+
+[node name="CardContainer" type="Node2D" parent="." unique_id=432391176]
+position = Vector2(109, 131)
+
+[node name="StatsPanel" type="Panel" parent="." unique_id=939264858]
+offset_left = 52.0
+offset_top = 249.0
+offset_right = 612.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cku63")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsPanel" unique_id=12505803]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Titulo" type="Label" parent="StatsPanel/VBoxContainer" unique_id=158111697]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.39215687, 1, 0.85490197, 1)
+theme_override_font_sizes/font_size = 22
+text = "📊 INFORMACIÓN DEL COMPONENTE"
+
+[node name="Nombre" type="Label" parent="StatsPanel/VBoxContainer" unique_id=1456315406]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.39215687, 1, 0.85490197, 1)
+theme_override_font_sizes/font_size = 26
+
+[node name="Precio" type="Label" parent="StatsPanel/VBoxContainer" unique_id=653982555]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="Peso" type="Label" parent="StatsPanel/VBoxContainer" unique_id=1798675707]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="Quimica" type="Label" parent="StatsPanel/VBoxContainer" unique_id=1455822612]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="VidaUtil" type="Label" parent="StatsPanel/VBoxContainer" unique_id=912521851]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="BtnLanzar" type="Button" parent="." unique_id=1135600345]
+visible = false
+z_index = 6
+offset_left = 822.0
+offset_top = 489.0
+offset_right = 960.0
+offset_bottom = 540.0
+text = "Lanzar"
+
+[node name="CoheteVista" type="Sprite2D" parent="." unique_id=1013457470]
+visible = false
+position = Vector2(900, 260)
+
+[node name="BudgetPanel" type="Panel" parent="." unique_id=1364894398]
+offset_left = 677.0
+offset_top = 26.0
+offset_right = 1114.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pj24i")
+
+[node name="BudgetLabel" type="Label" parent="BudgetPanel" unique_id=690712605]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 8.0
+offset_right = 349.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "💰 Presupuesto: 100M"
+
+[node name="DatosMision" type="Node" parent="." unique_id=769155727]
+script = ExtResource("6_15a1u")
+
+[connection signal="pressed" from="HBoxContainer/BtnCabina" to="Card_manager" method="_on_btn_cabina_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnMotor" to="Card_manager" method="_on_btn_motor_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnMotor" to="Card_manager" method="_on_btn_combustible_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnAlas" to="Card_manager" method="_on_btn_alas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnPatas" to="Card_manager" method="_on_btn_patas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnEscudo" to="Card_manager" method="_on_btn_escudo_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnPaneles" to="Card_manager" method="_on_btn_paneles_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnAntenas" to="Card_manager" method="_on_btn_antenas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnCarga" to="Card_manager" method="_on_btn_carga_pressed"]
+[connection signal="pressed" from="BtnLanzar" to="Card_manager" method="_on_btn_lanzar_pressed"]

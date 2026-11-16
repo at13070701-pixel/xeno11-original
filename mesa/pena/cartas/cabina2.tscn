@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cpfg3wugrgxca"]
+
+[ext_resource type="Script" uid="uid://bpej7wal5plai" path="res://cartas/card.gd" id="1_f7w6s"]
+[ext_resource type="Texture2D" uid="uid://cdl48fm0mas6m" path="res://cartas/sprite_osprey.png" id="2_xf5pt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm3su"]
+bg_color = Color(0.9607843, 0.9607843, 0.8627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vu8a"]
+size = Vector2(113, 122)
+
+[node name="Card" type="Node2D" unique_id=1358901574]
+script = ExtResource("1_f7w6s")
+card_name = "Mk2 \"Osprey\" (MD)"
+precio = 42
+peso = 2.42
+quimica = 35
+vida_util = 1.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1255400440]
+offset_left = -62.0
+offset_top = -97.0
+offset_right = 63.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xm3su")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1197581752]
+layout_mode = 0
+offset_right = 125.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "        Osprey"
+
+[node name="Label2" type="Label" parent="Panel" unique_id=74370918]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 161.0
+offset_right = 124.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " 💰42 Millones"
+
+[node name="Card_image" type="Sprite2D" parent="." unique_id=286787999]
+z_index = 5
+position = Vector2(0.9999924, 1)
+scale = Vector2(0.11658289, 0.07721519)
+texture = ExtResource("2_xf5pt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1958434758]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1315185117]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_0vu8a")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

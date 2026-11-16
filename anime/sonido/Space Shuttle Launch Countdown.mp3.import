@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl6df77ycvsau"
+path="res://.godot/imported/Space Shuttle Launch Countdown.mp3-bf4338de57b4e034d92e9a455fef4e31.mp3str"
+
+[deps]
+
+source_file="res://anime/sonido/Space Shuttle Launch Countdown.mp3"
+dest_files=["res://.godot/imported/Space Shuttle Launch Countdown.mp3-bf4338de57b4e034d92e9a455fef4e31.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

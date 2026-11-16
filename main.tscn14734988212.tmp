@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://b3y84tbqrqms0"]
+
+[ext_resource type="Script" uid="uid://dsl5lduoovpay" path="res://cartas/card_manager.gd" id="1_xm3su"]
+[ext_resource type="Script" uid="uid://duwuvifu2jjqp" path="res://cartas/slot.gd" id="2_xm3su"]
+
+[sub_resource type="Theme" id="Theme_mgblt"]
+
+[node name="main" type="Node2D" unique_id=1842489533]
+
+[node name="Card_manager" type="Node2D" parent="." unique_id=824589282]
+script = ExtResource("1_xm3su")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=827178112]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 7.0
+offset_top = 558.0
+offset_right = 1153.0
+offset_bottom = 650.0
+grow_horizontal = 2
+
+[node name="BtnCabina" type="Button" parent="HBoxContainer" unique_id=1820665849]
+layout_mode = 2
+text = "Cabina"
+
+[node name="BtnMotor" type="Button" parent="HBoxContainer" unique_id=127846640]
+layout_mode = 2
+text = "Motor"
+
+[node name="BtnAlas" type="Button" parent="HBoxContainer" unique_id=1128429818]
+layout_mode = 2
+text = "Alas"
+
+[node name="BtnPatas" type="Button" parent="HBoxContainer" unique_id=2061050908]
+layout_mode = 2
+text = "Patas de aterrizaje"
+
+[node name="BtnEscudo" type="Button" parent="HBoxContainer" unique_id=791280678]
+layout_mode = 2
+text = "Escudos termicos"
+
+[node name="BtnPaneles" type="Button" parent="HBoxContainer" unique_id=1470103986]
+layout_mode = 2
+text = "Paneles"
+
+[node name="BtnAntenas" type="Button" parent="HBoxContainer" unique_id=2111325431]
+layout_mode = 2
+text = "Antenas"
+
+[node name="BtnCarga" type="Button" parent="HBoxContainer" unique_id=138057911]
+layout_mode = 2
+text = "Carga"
+
+[node name="CraftGrid" type="GridContainer" parent="." unique_id=90673183]
+offset_left = 698.0
+offset_top = 100.0
+offset_right = 1086.0
+offset_bottom = 488.0
+theme = SubResource("Theme_mgblt")
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="SlotCabina" type="Panel" parent="CraftGrid" unique_id=518001055]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+
+[node name="Cabina" type="Label" parent="CraftGrid/SlotCabina" unique_id=1668381535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Cabina"
+
+[node name="SlotAlas" type="Panel" parent="CraftGrid" unique_id=842989582]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 2
+
+[node name="Alas" type="Label" parent="CraftGrid/SlotAlas" unique_id=1396869157]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Alas"
+
+[node name="SlotMotor" type="Panel" parent="CraftGrid" unique_id=1104536368]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 1
+
+[node name="Motor" type="Label" parent="CraftGrid/SlotMotor" unique_id=195456079]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Motor"
+
+[node name="SlotPatas" type="Panel" parent="CraftGrid" unique_id=910375083]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 3
+
+[node name="Patas" type="Label" parent="CraftGrid/SlotPatas" unique_id=1643660604]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 75.0
+text = "Patas de 
+aterizaje
+"
+
+[node name="SlotResultado" type="Panel" parent="CraftGrid" unique_id=1401267951]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 8
+
+[node name="Resultado" type="Label" parent="CraftGrid/SlotResultado" unique_id=825675265]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Resultado"
+
+[node name="SlotPaneles" type="Panel" parent="CraftGrid" unique_id=1819974657]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 5
+
+[node name="Paneles" type="Label" parent="CraftGrid/SlotPaneles" unique_id=1440958638]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 49.0
+text = "Paneles 
+solares"
+
+[node name="SlotAntenas" type="Panel" parent="CraftGrid" unique_id=1713451005]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 6
+
+[node name="Antenas" type="Label" parent="CraftGrid/SlotAntenas" unique_id=238699032]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Antenas"
+
+[node name="SlotEscudos" type="Panel" parent="CraftGrid" unique_id=220113763]
+custom_minimum_size = Vector2(81, 81)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 4
+
+[node name="Escudos" type="Label" parent="CraftGrid/SlotEscudos" unique_id=2001731210]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Escudos"
+
+[node name="SlotCarga" type="Panel" parent="CraftGrid" unique_id=625366328]
+custom_minimum_size = Vector2(81, 81)
+layout_mode = 2
+script = ExtResource("2_xm3su")
+slot_type = 7
+
+[node name="Carga" type="Label" parent="CraftGrid/SlotCarga" unique_id=240715026]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Carga"
+
+[node name="CardContainer" type="Node2D" parent="." unique_id=432391176]
+position = Vector2(-648, 99)
+
+[connection signal="pressed" from="HBoxContainer/BtnCabina" to="Card_manager" method="_on_btn_cabina_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnMotor" to="Card_manager" method="_on_btn_motor_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnMotor" to="Card_manager" method="_on_btn_combustible_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnAlas" to="Card_manager" method="_on_btn_alas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnPatas" to="Card_manager" method="_on_btn_patas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnEscudo" to="Card_manager" method="_on_btn_escudo_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnPaneles" to="Card_manager" method="_on_btn_paneles_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnAntenas" to="Card_manager" method="_on_btn_antenas_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnCarga" to="Card_manager" method="_on_btn_carga_pressed"]

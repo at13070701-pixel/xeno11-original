@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cpae7tb8w0ycy"]
+
+[ext_resource type="Script" uid="uid://dgk8ry475wmk0" path="res://dialogo.gd" id="1_cmsvf"]
+[ext_resource type="Texture2D" uid="uid://btfkvl4fqrans" path="res://margaret/margaret1.png" id="2_7648e"]
+[ext_resource type="Texture2D" uid="uid://cjcc0batw4okn" path="res://margaret/margaret2.png" id="3_kkome"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqivy"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("2_7648e")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_kkome")
+}],
+"loop": 1,
+"name": &"hablando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7648e")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Dialogo" type="CanvasLayer" unique_id=83472417]
+script = ExtResource("1_cmsvf")
+
+[node name="Personaje" type="AnimatedSprite2D" parent="." unique_id=1440721666]
+position = Vector2(821, 392.50003)
+scale = Vector2(0.41517857, 0.39749998)
+sprite_frames = SubResource("SpriteFrames_fqivy")
+animation = &"idle"
+
+[node name="Raiz" type="Control" parent="." unique_id=828484629]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.0
+offset_top = 10.0
+offset_right = 33.0
+offset_bottom = 50.0
+
+[node name="Panel" type="PanelContainer" parent="Raiz" unique_id=1567692886]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 510.0
+offset_right = 1017.0
+offset_bottom = 626.0
+
+[node name="Margen" type="MarginContainer" parent="Raiz/Panel" unique_id=1107461179]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Raiz/Panel/Margen" unique_id=1077289640]
+layout_mode = 2
+
+[node name="Nombre" type="Label" parent="Raiz/Panel/Margen/VBox" unique_id=2106043163]
+layout_mode = 2
+text = "Margaret Hamilton"
+
+[node name="Texto" type="RichTextLabel" parent="Raiz/Panel/Margen/VBox/Nombre" unique_id=1016481222]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_top = 44.0
+offset_right = 931.0
+offset_bottom = 191.0
+bbcode_enabled = true
+
+[node name="Indicador" type="Label" parent="Raiz" unique_id=1499225886]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 596.0
+offset_right = 1009.0
+offset_bottom = 619.0
+text = "▼"

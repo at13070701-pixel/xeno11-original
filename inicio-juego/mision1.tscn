@@ -1,0 +1,430 @@
+[gd_scene format=3 uid="uid://yc6d4kbl4f0d"]
+
+[ext_resource type="Texture2D" uid="uid://b5msebc8kxv5f" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/Blue_Nebula_04-1024x1024.png" id="1_86muc"]
+[ext_resource type="Texture2D" uid="uid://btma4xpm1yjhr" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/info.png" id="2_gaf8h"]
+[ext_resource type="Texture2D" uid="uid://lngva6vy7pow" path="res://space_background_pack/space_background_pack/Assets/Blue Version/layered/Captura de pantalla 2026-11-14 210928.png" id="3_gaf8h"]
+[ext_resource type="FontFile" uid="uid://caip3seb0jd0m" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/RETROTECH.ttf" id="4_ftn4s"]
+[ext_resource type="Texture2D" uid="uid://210ubeymxknk" path="res://SBS - Tiny Planet Pack/64x64/Real/Earth-64x64.png" id="5_86muc"]
+[ext_resource type="Script" uid="uid://bd81yctrqyw2q" path="res://c_3.gd" id="5_ftn4s"]
+[ext_resource type="Texture2D" uid="uid://detcp0taortpj" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/a_construir.png" id="5_l0day"]
+[ext_resource type="Script" uid="uid://dlsygmuxtppvl" path="res://animated_sprite_2d.gd" id="6_gaf8h"]
+[ext_resource type="Texture2D" uid="uid://b6rdo8ot1itkx" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Starfields/red_btn-removebg-preview.png" id="9_l0day"]
+
+[sub_resource type="GDScript" id="GDScript_l0day"]
+script/source = "extends Label
+
+var presupuesto_base: int = 1401
+var presupuesto_actual: int = 1401
+var presupuesto_infinito: bool = false
+
+
+var modo_seleccionado: String = \"\" # Aqui se juarda la opcion
+
+
+@onready var boton_facil: Sprite2D = $facil1
+@onready var boton_normal: Sprite2D = $normal1
+@onready var boton_sandbox: Sprite2D = $sadbox1
+@onready var boton_construir: Sprite2D = $AConstruir1
+
+
+@onready var label_presupuesto: Label = $\"../presupuesto1\"
+
+
+func _ready():
+	actualizar_interfaz()
+
+
+# DETECTAR CLICS DEL MOUSE
+func _input(event):
+
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+
+			if esta_sobre(boton_facil):
+				seleccionar_modo(\"facil\")
+
+			elif esta_sobre(boton_normal):
+				seleccionar_modo(\"normal\")
+
+			elif esta_sobre(boton_sandbox):
+				print(\"Clic en SANDBOX\")
+				seleccionar_modo(\"sandbox\")
+
+			elif esta_sobre(boton_construir):
+				if modo_seleccionado != \"\":
+					print(\"Construcción habilitada\")
+
+
+
+func esta_sobre(sprite: Sprite2D) -> bool:
+
+	if not is_instance_valid(sprite):
+		return false
+
+	var posicion_mouse = sprite.to_local(get_global_mouse_position())
+
+	return sprite.get_rect().has_point(posicion_mouse)
+
+
+
+func seleccionar_modo(modo: String):
+
+	modo_seleccionado = modo
+
+	match modo:
+
+		\"facil\":
+			presupuesto_actual = presupuesto_base + 100
+			presupuesto_infinito = false
+
+		\"normal\":
+			presupuesto_actual = presupuesto_base
+			presupuesto_infinito = false
+
+		\"sandbox\":
+			presupuesto_infinito = true
+
+	actualizar_interfaz()
+
+	print(\"Dificultad seleccionada: \", modo_seleccionado)
+	
+
+func actualizar_interfaz():
+
+
+	if presupuesto_infinito:
+		label_presupuesto.text = \"Presupuesto: INFINITO\"
+	else:
+		label_presupuesto.text = \"Presupuesto: \" + str(presupuesto_actual)
+
+
+	if modo_seleccionado == \"\":
+		boton_construir.modulate = Color(0.45, 0.45, 0.45, 1)
+	else:
+		boton_construir.modulate = Color.WHITE
+		
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsx0h"]
+atlas = ExtResource("5_86muc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba2cc"]
+atlas = ExtResource("5_86muc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h2wg"]
+atlas = ExtResource("5_86muc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg3o2"]
+atlas = ExtResource("5_86muc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ancvr"]
+atlas = ExtResource("5_86muc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbtpx"]
+atlas = ExtResource("5_86muc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmrfd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsx0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba2cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h2wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg3o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ancvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbtpx")
+}],
+"loop": 1,
+"name": &"rotacion",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_4l6es"]
+
+[sub_resource type="GDScript" id="GDScript_mws1h"]
+
+[sub_resource type="GDScript" id="GDScript_blkmy"]
+
+[sub_resource type="GDScript" id="GDScript_i1jec"]
+
+[node name="Fondo" type="Node2D" unique_id=826238070]
+
+[node name="BlueNebula041024x1024" type="Sprite2D" parent="." unique_id=1002019632]
+position = Vector2(580, 322)
+scale = Vector2(1.1279296, 0.63232416)
+texture = ExtResource("1_86muc")
+
+[node name="Info" type="Sprite2D" parent="." unique_id=464052628]
+position = Vector2(595.00006, 311.00003)
+scale = Vector2(0.8531022, 0.87592316)
+texture = ExtResource("2_gaf8h")
+
+[node name="CapturaDePantalla20261114210928" type="Sprite2D" parent="Info" unique_id=675027839]
+position = Vector2(-24.030054, -3.9958267)
+scale = Vector2(1.2008128, 1.2084404)
+texture = ExtResource("3_gaf8h")
+
+[node name="descripcion" type="Label" parent="." unique_id=485423133]
+offset_left = 211.0
+offset_top = 229.0
+offset_right = 787.0
+offset_bottom = 314.0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Viaja a los confines del espacio, explora nuestro planeta 
+y descubre los secretos del cambio climático antes de que 
+sea demasiado tarde"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="title3" type="Label" parent="." unique_id=1225873753]
+offset_left = 209.0
+offset_top = 130.0
+offset_right = 664.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0.49019608, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 50
+text = "Observacion 
+climatico global"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="c1" type="ColorRect" parent="." unique_id=762878489]
+offset_left = 918.0
+offset_top = 106.0
+offset_right = 938.0
+offset_bottom = 125.0
+color = Color(0.47350955, 0.6969538, 0.3153721, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="c2" type="ColorRect" parent="." unique_id=1658520790]
+offset_left = 944.0
+offset_top = 106.0
+offset_right = 964.0
+offset_bottom = 125.0
+color = Color(1, 1, 0.2784314, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="c3" type="ColorRect" parent="." unique_id=1172616543]
+offset_left = 970.0
+offset_top = 106.0
+offset_right = 991.0
+offset_bottom = 125.0
+color = Color(0.9295116, 0, 0.1550309, 1)
+script = ExtResource("5_ftn4s")
+metadata/_edit_use_anchors_ = true
+
+[node name="presupuesto1" type="Label" parent="." unique_id=822126279]
+offset_left = 268.0
+offset_top = 343.0
+offset_right = 568.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 33
+text = "Presupuesto 210M"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="vida1" type="Label" parent="." unique_id=766484089]
+offset_left = 259.0
+offset_top = 392.0
+offset_right = 602.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 33
+text = "Vida minima: 4 anos"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Vida1" type="Label" parent="." unique_id=552602671]
+anchors_preset = -1
+anchor_left = -0.8075802
+anchor_top = -6.734694
+anchor_right = -0.46938777
+anchor_bottom = -6.734694
+offset_left = 257.0
+offset_top = 457.0
+offset_right = 678.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 33
+text = "Objetivo cientifico: 300 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="dificultad1" type="Label" parent="." unique_id=1758777611]
+anchors_preset = -1
+anchor_left = 1.6269668
+anchor_top = 5.915526
+anchor_right = 1.626967
+anchor_bottom = 5.915527
+offset_left = 663.0
+offset_top = 404.0
+offset_right = 1006.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 25
+text = "Dificultad"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_l0day")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dificultad1" unique_id=1486294540]
+texture_filter = 1
+position = Vector2(177, -130)
+scale = Vector2(2.524249, 2.4124885)
+sprite_frames = SubResource("SpriteFrames_kmrfd")
+animation = &"rotacion"
+frame_progress = 0.007309569
+script = ExtResource("6_gaf8h")
+
+[node name="facil1" type="Sprite2D" parent="dificultad1" unique_id=1694744964]
+position = Vector2(81, 45)
+scale = Vector2(0.071754105, 0.064593256)
+texture = ExtResource("9_l0day")
+region_enabled = true
+region_rect = Rect2(27.299255, 37.7686, 439.3802, 418.23145)
+script = SubResource("GDScript_4l6es")
+
+[node name="normal1" type="Sprite2D" parent="dificultad1" unique_id=2097531176]
+position = Vector2(168.00006, 45.99997)
+scale = Vector2(0.071463585, 0.06443738)
+texture = ExtResource("9_l0day")
+region_enabled = true
+region_rect = Rect2(27.299255, 37.7686, 439.3802, 418.23145)
+script = SubResource("GDScript_mws1h")
+
+[node name="sadbox1" type="Sprite2D" parent="dificultad1" unique_id=2131002471]
+position = Vector2(260.99994, 46)
+scale = Vector2(0.07091129, 0.064439)
+texture = ExtResource("9_l0day")
+region_enabled = true
+region_rect = Rect2(27.299255, 37.7686, 439.3802, 418.23145)
+script = SubResource("GDScript_blkmy")
+
+[node name="AConstruir1" type="Sprite2D" parent="dificultad1" unique_id=1513667042]
+position = Vector2(171.00006, 98.99997)
+scale = Vector2(0.17667967, 0.14055964)
+texture = ExtResource("5_l0day")
+script = SubResource("GDScript_i1jec")
+
+[node name="facil3" type="Label" parent="dificultad1" unique_id=1894660309]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5504622
+anchor_top = -1.1319472
+anchor_right = -0.5504622
+anchor_bottom = -1.1319472
+offset_left = 100.80847
+offset_top = 100.46541
+offset_right = 443.80847
+offset_bottom = 149.46542
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 19
+text = "Facil"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="normal3" type="Label" parent="dificultad1/facil3" unique_id=1216008460]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4169866
+anchor_top = -1.7237839
+anchor_right = -0.40022877
+anchor_bottom = 2.2246578
+offset_left = 355.0264
+offset_top = 100.465416
+offset_right = 443.80847
+offset_bottom = -56.00824
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 19
+text = "Normal
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="sadbox3" type="Label" parent="dificultad1/facil3/normal3" unique_id=498592841]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.771886
+anchor_top = -2.7152817
+anchor_right = -2.7692537
+anchor_bottom = 1.9731957
+offset_left = 355.0264
+offset_top = 100.465416
+offset_right = 443.80847
+offset_bottom = -56.00824
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ftn4s")
+theme_override_font_sizes/font_size = 19
+text = "Sadbox"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="acento2" type="ColorRect" parent="." unique_id=422132753]
+offset_left = 323.0
+offset_top = 167.0
+offset_right = 330.0
+offset_bottom = 181.0
+offset_transform_enabled = true
+offset_transform_rotation = -2.815216
+color = Color(0.13159528, 4.2114407e-05, 0.47743624, 1)
+
+[node name="acento" type="ColorRect" parent="." unique_id=438699763]
+offset_left = 450.0
+offset_top = 122.0
+offset_right = 457.0
+offset_bottom = 136.0
+offset_transform_enabled = true
+offset_transform_rotation = -2.815216
+color = Color(0.13159528, 4.2114407e-05, 0.47743624, 1)
+
+[node name="acento3" type="ColorRect" parent="." unique_id=553577186]
+offset_left = 387.0
+offset_top = 394.0
+offset_right = 392.0
+offset_bottom = 405.0
+offset_transform_enabled = true
+offset_transform_rotation = -2.815216
+color = Color(0, 0, 0, 1)
+
+[node name="acento4" type="ColorRect" parent="." unique_id=1982965000]
+offset_left = 480.0
+offset_top = 457.0
+offset_right = 487.0
+offset_bottom = 471.0
+offset_transform_enabled = true
+offset_transform_rotation = -2.815216
+color = Color(0, 0, 0, 1)

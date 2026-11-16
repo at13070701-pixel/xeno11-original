@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyohiur44opbq"]
+
+[ext_resource type="Script" uid="uid://djykyl5a7s33" path="res://videojuegos/contrasena/alfabeto.gd" id="1_rgext"]
+[ext_resource type="Texture2D" uid="uid://ihdikhvugqtl" path="res://videojuegos/contrasena/alfabeto.png" id="2_cm304"]
+
+[node name="alfabeto" type="Node2D" unique_id=626350027]
+script = ExtResource("1_rgext")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=64469687]
+texture_filter = 1
+offset_left = -17.0
+offset_top = -20.0
+offset_right = 359.0
+offset_bottom = 401.0
+texture = ExtResource("2_cm304")

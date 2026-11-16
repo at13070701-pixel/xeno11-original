@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bytpce5epkvwr"]
+
+[ext_resource type="Script" uid="uid://knu5vgxyq65f" path="res://videojuegos/contrasena/contraseña.gd" id="1_7mppy"]
+[ext_resource type="PackedScene" uid="uid://crtpww7nv0w8y" path="res://videojuegos/contrasena/contraseñahoja.tscn" id="2_2p6w8"]
+[ext_resource type="Texture2D" uid="uid://6b7lq8kljeye" path="res://pixelart_starfields/pixelart_starfield.png" id="2_d78qv"]
+[ext_resource type="Texture2D" uid="uid://duaesxs305kl8" path="res://pixelart_starfields/panel minijuego.png" id="2_l1ydb"]
+[ext_resource type="PackedScene" uid="uid://dyohiur44opbq" path="res://videojuegos/contrasena/alfabeto.tscn" id="3_d78qv"]
+
+[node name="contraseña" type="Control" unique_id=1371966976]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7mppy")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=992967275]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+texture = ExtResource("2_d78qv")
+
+[node name="contraseñahoja" parent="." unique_id=364484911 instance=ExtResource("2_2p6w8")]
+position = Vector2(14, 392)
+
+[node name="alfabeto" parent="." unique_id=626350027 instance=ExtResource("3_d78qv")]
+position = Vector2(764, 59)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1888378555]
+texture_filter = 1
+layout_mode = 0
+offset_left = -36.0
+offset_top = -29.0
+offset_right = 336.0
+offset_bottom = 384.0
+texture = ExtResource("2_l1ydb")
+
+[node name="Label" type="Label" parent="." unique_id=241450929]
+texture_filter = 1
+layout_mode = 0
+offset_left = 54.0
+offset_top = 60.0
+offset_right = 244.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 26
+text = "CONTRASEÑA:"
+
+[node name="Button" type="Button" parent="." unique_id=1187377451]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 292.0
+offset_right = 175.0
+offset_bottom = 323.0
+text = "ENVIAR"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1385847254]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 178.0
+offset_right = 251.0
+offset_bottom = 221.0
+
+[node name="Resultado" type="Label" parent="." unique_id=1076266221]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 233.0
+offset_right = 192.0
+offset_bottom = 262.0

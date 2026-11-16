@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b1yia7hncovb"]
+
+[ext_resource type="Texture2D" uid="uid://dbq0a5l05itwh" path="res://3despegue/fondo_prueba.png" id="1_kfo4i"]
+[ext_resource type="Script" uid="uid://dyuqjkt86oq4v" path="res://3despegue/despegue.gd" id="1_lqh3i"]
+[ext_resource type="Texture2D" uid="uid://6b7lq8kljeye" path="res://pixelart_starfields/pixelart_starfield.png" id="2_1hv0m"]
+
+[node name="Node2D" type="Node2D" unique_id=1605608284]
+script = ExtResource("1_lqh3i")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1688128860]
+texture_filter = 1
+offset_right = 1151.0
+offset_bottom = 647.0
+texture = ExtResource("2_1hv0m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1588314277]
+texture_filter = 1
+offset_right = 1160.0
+offset_bottom = 656.0
+texture = ExtResource("1_kfo4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=414500741]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=357267958]
